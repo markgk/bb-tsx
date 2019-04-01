@@ -3,6 +3,7 @@ import Aux from '../../hoc/Aux'
 import Burger from '../../components/Burger/Burger'
 import { IngredientList, Ingredient } from '../../components/Burger/BurgerIngredient/BurgerIngredient'
 import BuildControls from '../../components/Burger/BuildControls/BuildControls'
+import Modal from '../../components/Modal/Modal'
 
 
 export interface Props { }
@@ -11,6 +12,7 @@ export interface Props { }
 export interface State {
   ingredients: IngredientList<number>
   price: number
+  modalOn: boolean;
 }
 
 const PRICE_LIST: IngredientList<number> = {
@@ -26,7 +28,8 @@ class BurgerBuilder extends React.Component<Props, State> {
 
   state: State = {
     ingredients: { salad: 0, bacon: 0, cheese: 0, meat: 0 },
-    price: 0
+    price: 0,
+    modalOn: false
   }
 
   addIngredient = (type: Ingredient) => {
@@ -48,15 +51,25 @@ class BurgerBuilder extends React.Component<Props, State> {
       this.setState({ ...this.state, ingredients: newIngs, price: newPrice })
     }
   }
+  postModal = () => this.setState({ modalOn: true })
+  dismissModal = () => this.setState({ modalOn: false })
+
   render() {
     return (
       <Aux>
         <Burger ingredients={this.state.ingredients} />
+
+        <Modal show={this.state.modalOn} onDismissed={this.dismissModal}>
+          <h1>This is Modal</h1>
+        </Modal>
+
         <BuildControls
           price={this.state.price}
           ingredients={this.state.ingredients}
           ingAdded={this.addIngredient}
           ingRemoved={this.removeIngredient}
+          postModal={this.postModal}
+          dismissModal={this.dismissModal}
         />
       </Aux>
     );

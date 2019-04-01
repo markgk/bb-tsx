@@ -9,9 +9,15 @@ export interface Props {
   price: number,
   ingAdded(type: Ingredient): void
   ingRemoved(type: Ingredient): void
+  postModal(): void
+  dismissModal(): void
 }
 
 const BuildControls: React.SFC<Props> = (props) => {
+
+  const postOrder = () => {
+
+  }
 
   const ingsArray = Object.entries(props.ingredients) as [Ingredient, number][]
   const disableOrder = ingsArray.reduce((s, [_, i]) => s += i, 0) == 0
@@ -27,7 +33,7 @@ const BuildControls: React.SFC<Props> = (props) => {
           lessDisabled={n == 0}
           moreDisabled={n == MAX_INGREDIENT_COUNT}
         />)}
-      <button disabled={disableOrder} className={CSS.OrderButton}>ORDER NOW</button>
+      <button disabled={disableOrder} className={CSS.OrderButton} onClick={_ => props.postModal()}>ORDER NOW</button>
     </div>
 
   );
