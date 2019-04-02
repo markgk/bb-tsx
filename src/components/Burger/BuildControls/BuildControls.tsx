@@ -22,6 +22,7 @@ const BuildControls: React.SFC<Props> = (props) => {
 
   const ingsArray = Object.entries(props.ingredients) as [Ingredient, number][]
   const disableOrder = ingsArray.reduce((s, [_, i]) => s += i, 0) == 0
+
   return (
     <div className={CSS.BuildControls}>
       <p><strong>{props.price.toFixed(2)}</strong></p>
@@ -34,8 +35,7 @@ const BuildControls: React.SFC<Props> = (props) => {
           lessDisabled={n == 0}
           moreDisabled={n == MAX_INGREDIENT_COUNT}
         />)}
-      <button disabled={disableOrder} className={CSS.OrderButton} onClick={_ => props.postModal()}>ORDER NOW</button>
-      <Button onClick={() => console.log('Test Clicked')}>TEST ME</Button>
+      <Button disabled={disableOrder} onClick={props.postModal}>ORDER NOW</Button>
     </div>
 
   );

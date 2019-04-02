@@ -22,7 +22,7 @@ const OrderSummary: React.SFC<Props> = ({ ingCounts, priceList, dismissOrder, pl
 
   const ingJSX = icp.map(([ing, cnt, price]) =>
     <li key={ing}>
-      <p><strong>{cnt}@{price.toFixed(2)} = {(cnt * price).toFixed(2)}</strong>  {ing}</p>
+      <p><strong>{cnt}@{price.toFixed(2)} = {(cnt * price).toFixed(2)}</strong>&nbsp;&nbsp; {ing}</p>
     </li>)
 
   return (

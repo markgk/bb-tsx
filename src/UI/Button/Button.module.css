@@ -10,6 +10,20 @@
     border-radius: 10px;
 }
 
+.Button:hover,
+.Button:active {
+    background-color: rgb(18, 199, 45);
+    border: 1px solid #966909;
+    /* color: #966909; */
+}
+
+.Button:disabled {
+    background-color: #C7C6C6;
+    cursor: not-allowed;
+    border: 5px solid #ccc;
+    color: #888888;
+}
+
 .Button:first-of-type {
     margin-left: 0;
     /* padding-left: 0; */
