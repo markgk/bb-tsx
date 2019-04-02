@@ -1,7 +1,7 @@
 import * as React from 'react';
 import CSS from './Burger.module.css'
-import BurgerIngredient from './BurgerIngredient/BurgerIngredient'
-import { BREAD_BOTTOM, BREAD_TOP, IngredientList } from './BurgerIngredient/BurgerIngredient'
+import BurgerIngredient from '../BurgerIngredient/BurgerIngredient'
+import { BREAD_BOTTOM, BREAD_TOP, IngredientList } from '../BurgerIngredient/BurgerIngredient'
 
 
 export interface Props {

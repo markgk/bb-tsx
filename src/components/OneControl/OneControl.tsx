@@ -1,6 +1,6 @@
 import * as React from 'react';
 import CSS from './OneControl.module.css'
-import Button from '../../../../UI/Button/Button'
+import Button from '../../UI/Button/Button'
 
 
 

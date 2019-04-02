@@ -1,6 +1,6 @@
 import * as React from 'react';
 import CSS from './OrderSummary.module.css'
-import { IngredientList } from '../Burger/BurgerIngredient/BurgerIngredient';
+import { IngredientList } from '../BurgerIngredient/BurgerIngredient';
 import Button from '../../UI/Button/Button'
 
 export interface Props {

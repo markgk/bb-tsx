@@ -1,9 +1,9 @@
 import * as React from 'react';
-import OneControl from './OneControl/OneControl'
+import OneControl from '../OneControl/OneControl'
 import CSS from './BuildControls.module.css'
 import { Ingredient, IngredientList } from '../BurgerIngredient/BurgerIngredient'
-import { MAX_INGREDIENT_COUNT } from '../../../containers/BurgerBuilder/BurgerBuilder'
-import Button from '../../../UI/Button/Button'
+import { MAX_INGREDIENT_COUNT } from '../../containers/BurgerBuilder/BurgerBuilder'
+import Button from '../../UI/Button/Button'
 
 export interface Props {
   ingredients: IngredientList<number>
