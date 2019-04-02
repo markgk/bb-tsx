@@ -4,6 +4,7 @@ import Burger from '../../components/Burger/Burger'
 import { IngredientList, Ingredient } from '../../components/Burger/BurgerIngredient/BurgerIngredient'
 import BuildControls from '../../components/Burger/BuildControls/BuildControls'
 import Modal from '../../components/Modal/Modal'
+import OrderSummary from '../../components/OrderSummary/OrderSummary'
 
 
 export interface Props { }
@@ -54,13 +55,25 @@ class BurgerBuilder extends React.Component<Props, State> {
   postModal = () => this.setState({ modalOn: true })
   dismissModal = () => this.setState({ modalOn: false })
 
+  placeOrder = () => {
+    console.log('Place Order')
+    this.dismissModal()
+  }
+  dismissOrder = this.dismissModal
+
+
   render() {
     return (
       <Aux>
         <Burger ingredients={this.state.ingredients} />
 
         <Modal show={this.state.modalOn} onDismissed={this.dismissModal}>
-          <h1>This is Modal</h1>
+          <OrderSummary
+            ingCounts={this.state.ingredients}
+            priceList={PRICE_LIST}
+            placeOrder={this.placeOrder}
+            dismissOrder={this.placeOrder}
+          />
         </Modal>
 
         <BuildControls

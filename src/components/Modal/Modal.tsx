@@ -14,7 +14,6 @@ const Modal: React.SFC<Props> = ({ show, onDismissed, children }) => {
         onDismissed()
       }} className={CSS.Backdrop} />
       <div className={CSS.Modal}>
-        <h1>this is a modal</h1>
         {children}
       </div>
     </div>
