@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { IngredientList } from '../Burger/BurgerIngredient/BurgerIngredient';
 import CSS from './OrderSummary.module.css'
+import { IngredientList } from '../Burger/BurgerIngredient/BurgerIngredient';
+import Button from '../../UI/Button/Button'
 
 export interface Props {
   ingCounts: IngredientList<number>;
@@ -34,8 +35,8 @@ const OrderSummary: React.SFC<Props> = ({ ingCounts, priceList, dismissOrder, pl
       <hr />
       <p><strong>{icp.reduce((s, [_, cnt, prc]) => s += cnt * prc, 0).toFixed(2)}</strong></p>
       <hr />
-      <button onClick={_ => placeOrder()}>Buy</button>
-      <button onClick={_ => dismissOrder()}>Build</button>
+      <Button onClick={dismissOrder} buttonType={'Danger'}>CANCEL</Button>
+      <Button onClick={placeOrder} buttonType={'Success'}>BUY</Button>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import OneControl from './OneControl/OneControl'
 import CSS from './BuildControls.module.css'
 import { Ingredient, IngredientList } from '../BurgerIngredient/BurgerIngredient'
 import { MAX_INGREDIENT_COUNT } from '../../../containers/BurgerBuilder/BurgerBuilder'
+import Button from '../../../UI/Button/Button'
 
 export interface Props {
   ingredients: IngredientList<number>
@@ -34,6 +35,7 @@ const BuildControls: React.SFC<Props> = (props) => {
           moreDisabled={n == MAX_INGREDIENT_COUNT}
         />)}
       <button disabled={disableOrder} className={CSS.OrderButton} onClick={_ => props.postModal()}>ORDER NOW</button>
+      <Button onClick={() => console.log('Test Clicked')}>TEST ME</Button>
     </div>
 
   );
