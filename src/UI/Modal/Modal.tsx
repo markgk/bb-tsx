@@ -11,7 +11,7 @@ export interface Props {
 
 const Modal: React.SFC<Props> = ({ show, onDismissed, children }) => {
   const modal = show ? (
-    <div>
+    <div >
       <Backdrop show={show} onDismissed={onDismissed}></Backdrop>
       <div className={CSS.ModalContainer}>
         <div className={CSS.Modal}>
