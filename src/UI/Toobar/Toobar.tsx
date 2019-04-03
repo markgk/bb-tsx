@@ -4,9 +4,9 @@ export interface Props { }
 
 const Toolbar: React.SFC<Props> = ({ children }) => {
   return (
-    <head className={CSS.Toolbar}>
+    <div className={CSS.Toolbar}>
       {children}
-    </head>
+    </div>
   );
 }
 Toolbar.defaultProps = {

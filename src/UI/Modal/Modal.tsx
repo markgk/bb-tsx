@@ -1,5 +1,8 @@
 import * as React from 'react';
 import CSS from './Modal.module.css'
+import Backdrop from '../Backdrop/Backdrop'
+
+
 
 export interface Props {
   show: boolean
@@ -9,12 +12,11 @@ export interface Props {
 const Modal: React.SFC<Props> = ({ show, onDismissed, children }) => {
   const modal = show ? (
     <div>
-      <div onClick={() => {
-        console.log('clicked')
-        onDismissed()
-      }} className={CSS.Backdrop} />
-      <div className={CSS.Modal}>
-        {children}
+      <Backdrop show={show} onDismissed={onDismissed}></Backdrop>
+      <div className={CSS.ModalContainer}>
+        <div className={CSS.Modal}>
+          {children}
+        </div>
       </div>
     </div>
   ) : null;
@@ -23,4 +25,3 @@ const Modal: React.SFC<Props> = ({ show, onDismissed, children }) => {
 };
 
 export default Modal;
-
