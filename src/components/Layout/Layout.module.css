@@ -1,3 +1,15 @@
 .Content {
     margin-top: 80px
 }
+
+@media (min-width: 500px) {
+    .DisplaySide {
+        display: none;
+    }
+}
+
+@media (max-width: 499px) {
+    .DisplayNav {
+        display: none;
+    }
+}
